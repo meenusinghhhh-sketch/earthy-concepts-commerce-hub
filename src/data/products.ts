@@ -1,5 +1,13 @@
 import { Product, Bundle, Concept } from '@/types/product';
 
+// Import product images
+import serenTeaImg from '@/assets/products/serene-tea.jpg';
+import herTeaImg from '@/assets/products/her-tea.jpg';
+import immuneTeaImg from '@/assets/products/immune-tea.jpg';
+import diabeTeaImg from '@/assets/products/diabe-tea.jpg';
+import radiantTeaImg from '@/assets/products/radiant-tea.jpg';
+import heartTeaImg from '@/assets/products/heart-tea.jpg';
+
 export const products: Product[] = [
   {
     id: 'serene-tea',
@@ -10,8 +18,8 @@ export const products: Product[] = [
     price: 129,
     subscriptionPrice: 109,
     currency: 'AED',
-    image: '/placeholder.svg',
-    images: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+    image: serenTeaImg,
+    images: [serenTeaImg, serenTeaImg, serenTeaImg],
     category: 'teas',
     concept: 'calm',
     problemSupports: ['Stress relief', 'Better sleep', 'Mental clarity'],
@@ -47,8 +55,8 @@ export const products: Product[] = [
     price: 139,
     subscriptionPrice: 118,
     currency: 'AED',
-    image: '/placeholder.svg',
-    images: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+    image: herTeaImg,
+    images: [herTeaImg, herTeaImg, herTeaImg],
     category: 'teas',
     concept: 'womens-balance',
     problemSupports: ['Hormonal balance', 'Cycle support', 'Energy levels'],
@@ -84,8 +92,8 @@ export const products: Product[] = [
     price: 119,
     subscriptionPrice: 101,
     currency: 'AED',
-    image: '/placeholder.svg',
-    images: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+    image: immuneTeaImg,
+    images: [immuneTeaImg, immuneTeaImg, immuneTeaImg],
     category: 'teas',
     concept: 'immunity',
     problemSupports: ['Immune support', 'Seasonal wellness', 'Daily protection'],
@@ -121,8 +129,8 @@ export const products: Product[] = [
     price: 149,
     subscriptionPrice: 127,
     currency: 'AED',
-    image: '/placeholder.svg',
-    images: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+    image: diabeTeaImg,
+    images: [diabeTeaImg, diabeTeaImg, diabeTeaImg],
     category: 'teas',
     concept: 'metabolic-balance',
     problemSupports: ['Blood sugar support', 'Metabolic health', 'Energy balance'],
@@ -158,8 +166,8 @@ export const products: Product[] = [
     price: 129,
     subscriptionPrice: 109,
     currency: 'AED',
-    image: '/placeholder.svg',
-    images: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+    image: radiantTeaImg,
+    images: [radiantTeaImg, radiantTeaImg, radiantTeaImg],
     category: 'teas',
     concept: 'skin-glow',
     problemSupports: ['Skin radiance', 'Healthy complexion', 'Inner glow'],
@@ -195,8 +203,8 @@ export const products: Product[] = [
     price: 149,
     subscriptionPrice: 127,
     currency: 'AED',
-    image: '/placeholder.svg',
-    images: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+    image: heartTeaImg,
+    images: [heartTeaImg, heartTeaImg, heartTeaImg],
     category: 'teas',
     concept: 'heart-wellness',
     problemSupports: ['Heart health', 'Circulation', 'Long-term wellness'],
@@ -294,7 +302,7 @@ export const bundles: Bundle[] = [
     bundlePrice: 169,
     subscriptionPrice: 149,
     savings: 30,
-    image: '/placeholder.svg'
+    image: serenTeaImg
   },
   {
     id: 'womens-bundle',
@@ -307,7 +315,7 @@ export const bundles: Bundle[] = [
     bundlePrice: 185,
     subscriptionPrice: 165,
     savings: 34,
-    image: '/placeholder.svg'
+    image: herTeaImg
   },
   {
     id: 'immunity-bundle',
@@ -320,7 +328,7 @@ export const bundles: Bundle[] = [
     bundlePrice: 159,
     subscriptionPrice: 139,
     savings: 30,
-    image: '/placeholder.svg'
+    image: immuneTeaImg
   },
   {
     id: 'metabolic-bundle',
@@ -333,7 +341,7 @@ export const bundles: Bundle[] = [
     bundlePrice: 195,
     subscriptionPrice: 175,
     savings: 34,
-    image: '/placeholder.svg'
+    image: diabeTeaImg
   },
   {
     id: 'skin-bundle',
@@ -346,7 +354,7 @@ export const bundles: Bundle[] = [
     bundlePrice: 179,
     subscriptionPrice: 159,
     savings: 30,
-    image: '/placeholder.svg'
+    image: radiantTeaImg
   },
   {
     id: 'heart-bundle',
@@ -359,7 +367,7 @@ export const bundles: Bundle[] = [
     bundlePrice: 195,
     subscriptionPrice: 175,
     savings: 34,
-    image: '/placeholder.svg'
+    image: heartTeaImg
   }
 ];
 
