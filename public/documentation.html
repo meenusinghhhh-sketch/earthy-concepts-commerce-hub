@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earthy Concepts - E-Commerce Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: hsl(65, 60%, 25%);
+      --secondary: hsl(75, 20%, 85%);
+      --accent: hsl(20, 60%, 55%);
+      --background: hsl(45, 30%, 96%);
+      --foreground: hsl(65, 30%, 15%);
+      --muted: hsl(75, 15%, 90%);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+      line-height: 1.7;
+      padding: 0;
+    }
+    
+    .header {
+      background: var(--primary);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .header p {
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--secondary);
+    }
+    
+    h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--foreground);
+      font-size: 1.3rem;
+      margin: 1.5rem 0 0.75rem;
+    }
+    
+    h4 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin: 1.25rem 0 0.5rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    ul, ol {
+      margin: 1rem 0 1rem 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    
+    th {
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    td {
+      padding: 0.875rem 1rem;
+      border-bottom: 1px solid var(--muted);
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    tr:hover {
+      background: var(--muted);
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    
+    .card h4 {
+      margin-top: 0;
+    }
+    
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+    }
+    
+    .badge.green {
+      background: var(--primary);
+    }
+    
+    .section {
+      margin-bottom: 3rem;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .highlight {
+      background: linear-gradient(135deg, var(--secondary), white);
+      border-left: 4px solid var(--primary);
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .approved {
+      color: var(--primary);
+    }
+    
+    .prohibited {
+      color: #c53030;
+    }
+    
+    .toc {
+      background: white;
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    
+    .toc h3 {
+      margin-top: 0;
+    }
+    
+    .toc ul {
+      columns: 2;
+      column-gap: 2rem;
+    }
+    
+    .toc a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .toc a:hover {
+      text-decoration: underline;
+    }
+    
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--muted);
+      margin-top: 3rem;
+      color: var(--foreground);
+      opacity: 0.8;
+    }
+    
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .toc ul {
+        columns: 1;
+      }
+      
+      table {
+        font-size: 0.9rem;
+      }
+      
+      th, td {
+        padding: 0.6rem;
+      }
+    }
+    
+    @media print {
+      .header {
+        background: white;
+        color: var(--primary);
+        border-bottom: 2px solid var(--primary);
+      }
+      
+      .card, .toc {
+        box-shadow: none;
+        border: 1px solid var(--muted);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Earthy Concepts</h1>
+    <p>E-Commerce Website Documentation</p>
+  </div>
+  
+  <div class="container">
+    <nav class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#brand">Brand Overview</a></li>
+        <li><a href="#products">Product Catalog</a></li>
+        <li><a href="#bundles">Concept Bundles</a></li>
+        <li><a href="#concepts">Wellness Concepts</a></li>
+        <li><a href="#website">Website Structure</a></li>
+        <li><a href="#ecommerce">E-Commerce Features</a></li>
+        <li><a href="#design">Design System</a></li>
+        <li><a href="#compliance">Compliance Guidelines</a></li>
+        <li><a href="#metrics">Success Metrics</a></li>
+        <li><a href="#tech">Technical Stack</a></li>
+        <li><a href="#future">Future Enhancements</a></li>
+      </ul>
+    </nav>
+    
+    <section id="brand" class="section">
+      <h2>Brand Overview</h2>
+      <p><strong>Earthy Concepts</strong> is a modern Ayurvedic wellness brand born in Dubai, UAE — where the ancient meets the avant-garde. The brand blends indigenous knowledge systems with modern wellness practices.</p>
+      
+      <h3>Brand Philosophy</h3>
+      <ul>
+        <li>Sells <strong>wellness concepts</strong> practiced through simple daily routines</li>
+        <li>Products are the <strong>tools</strong> that enable these concepts</li>
+        <li>Does NOT make medical claims or sell quick fixes</li>
+      </ul>
+      
+      <h3>Key Problem Areas Addressed</h3>
+      <ol>
+        <li>Stress & poor sleep</li>
+        <li>Hormonal balance</li>
+        <li>Immunity</li>
+        <li>Blood sugar & metabolism</li>
+        <li>Skin & glow</li>
+        <li>Long-term heart wellness</li>
+      </ol>
+      
+      <h3>Brand Tone</h3>
+      <div class="highlight">
+        <span class="badge green">Calm</span>
+        <span class="badge green">Premium</span>
+        <span class="badge green">Trust-building</span>
+        <span class="badge green">Educational</span>
+        <span class="badge green">Modern</span>
+      </div>
+    </section>
+    
+    <section id="products" class="section">
+      <h2>Product Catalog</h2>
+      
+      <h3>Teas (Core Products)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price (AED)</th>
+            <th>Subscription</th>
+            <th>Concept</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SereneTea</strong></td>
+            <td>109</td>
+            <td>93</td>
+            <td>Calm</td>
+          </tr>
+          <tr>
+            <td><strong>HerTea</strong></td>
+            <td>118</td>
+            <td>100</td>
+            <td>Women's Balance</td>
+          </tr>
+          <tr>
+            <td><strong>ImmuneTea</strong></td>
+            <td>101</td>
+            <td>86</td>
+            <td>Immunity</td>
+          </tr>
+          <tr>
+            <td><strong>DiabeTea</strong></td>
+            <td>125</td>
+            <td>106</td>
+            <td>Metabolic Balance</td>
+          </tr>
+          <tr>
+            <td><strong>RadiantTea</strong></td>
+            <td>109</td>
+            <td>93</td>
+            <td>Skin Glow</td>
+          </tr>
+          <tr>
+            <td><strong>HeartTea</strong></td>
+            <td>115</td>
+            <td>98</td>
+            <td>Heart Wellness</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h3>Product Details</h3>
+      
+      <div class="grid">
+        <div class="card">
+          <h4>SereneTea</h4>
+          <p><em>For calm & restful sleep</em></p>
+          <p>A calming blend of ashwagandha, chamomile, and lavender designed to support your evening wind-down routine.</p>
+          <p><strong>Ingredients:</strong> Ashwagandha root, Chamomile flowers, Lavender buds, Valerian root, Passionflower, Lemon balm</p>
+          <p><strong>Best Time:</strong> Evening, 30 minutes before bed</p>
+        </div>
+        
+        <div class="card">
+          <h4>HerTea</h4>
+          <p><em>For hormonal balance</em></p>
+          <p>A nurturing blend with shatavari and rose, crafted to support women's hormonal wellness throughout their cycle.</p>
+          <p><strong>Ingredients:</strong> Shatavari root, Rose petals, Fennel seeds, Licorice root, Raspberry leaf, Dong quai</p>
+          <p><strong>Best Time:</strong> Morning or afternoon</p>
+        </div>
+        
+        <div class="card">
+          <h4>ImmuneTea</h4>
+          <p><em>For daily immunity</em></p>
+          <p>A powerful blend of turmeric, ginger, and tulsi to support your body's natural defense system every day.</p>
+          <p><strong>Ingredients:</strong> Turmeric root, Ginger root, Tulsi (Holy basil), Echinacea, Elderberry, Black pepper</p>
+          <p><strong>Best Time:</strong> Morning with breakfast</p>
+        </div>
+        
+        <div class="card">
+          <h4>DiabeTea</h4>
+          <p><em>For blood sugar balance</em></p>
+          <p>A carefully crafted blend with cinnamon and fenugreek to support healthy blood sugar levels.</p>
+          <p><strong>Ingredients:</strong> Cinnamon bark, Fenugreek seeds, Bitter melon, Gymnema sylvestre, Berberine, Green tea</p>
+          <p><strong>Best Time:</strong> After meals</p>
+        </div>
+        
+        <div class="card">
+          <h4>RadiantTea</h4>
+          <p><em>For skin & glow</em></p>
+          <p>A beauty-boosting blend with hibiscus and rose designed to nourish your skin from within.</p>
+          <p><strong>Ingredients:</strong> Hibiscus flowers, Rose petals, Amla (Indian gooseberry), Manjistha, Neem leaf, Aloe vera</p>
+          <p><strong>Best Time:</strong> Anytime during the day</p>
+        </div>
+        
+        <div class="card">
+          <h4>HeartTea</h4>
+          <p><em>For heart wellness</em></p>
+          <p>A heart-supporting blend featuring arjuna and hawthorn for cardiovascular wellness.</p>
+          <p><strong>Ingredients:</strong> Arjuna bark, Hawthorn berry, Hibiscus flowers, Pomegranate, Garlic extract, CoQ10</p>
+          <p><strong>Best Time:</strong> Morning</p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="bundles" class="section">
+      <h2>Concept Bundles</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Bundle</th>
+            <th>Products</th>
+            <th>Original</th>
+            <th>Bundle Price</th>
+            <th>Savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Calm Concept Pack</strong></td>
+            <td>SereneTea, Calm Topical</td>
+            <td>258 AED</td>
+            <td>219 AED</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td><strong>Women's Balance Pack</strong></td>
+            <td>HerTea, Balance Oil</td>
+            <td>286 AED</td>
+            <td>243 AED</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td><strong>Immunity Concept Pack</strong></td>
+            <td>ImmuneTea, Defense Caps</td>
+            <td>250 AED</td>
+            <td>213 AED</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td><strong>Metabolic Balance Pack</strong></td>
+            <td>DiabeTea, Metabolic Caps</td>
+            <td>298 AED</td>
+            <td>253 AED</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td><strong>Skin & Glow Pack</strong></td>
+            <td>RadiantTea, Glow Oil</td>
+            <td>268 AED</td>
+            <td>228 AED</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td><strong>Heart Wellness Pack</strong></td>
+            <td>HeartTea, Cardio Caps</td>
+            <td>290 AED</td>
+            <td>247 AED</td>
+            <td>15%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <section id="concepts" class="section">
+      <h2>Wellness Concepts</h2>
+      
+      <div class="grid">
+        <div class="card">
+          <h4>🧘 Calm Concept</h4>
+          <p><strong>Problem:</strong> Modern life creates chronic stress that disrupts sleep and mental clarity</p>
+          <p><strong>Solution:</strong> Daily calming rituals with adaptogenic herbs</p>
+          <p><strong>Products:</strong> SereneTea, Calm Topical Balm</p>
+        </div>
+        
+        <div class="card">
+          <h4>🌸 Women's Balance Concept</h4>
+          <p><strong>Problem:</strong> Hormonal fluctuations affect energy, mood, and overall wellbeing</p>
+          <p><strong>Solution:</strong> Nurturing herbs that support the female cycle naturally</p>
+          <p><strong>Products:</strong> HerTea, Balance Oil</p>
+        </div>
+        
+        <div class="card">
+          <h4>🛡️ Immunity Concept</h4>
+          <p><strong>Problem:</strong> Weakened immunity from lifestyle, environment, and seasonal changes</p>
+          <p><strong>Solution:</strong> Daily immune-supporting herbs and antioxidants</p>
+          <p><strong>Products:</strong> ImmuneTea, Defense Capsules</p>
+        </div>
+        
+        <div class="card">
+          <h4>⚖️ Metabolic Balance Concept</h4>
+          <p><strong>Problem:</strong> Blood sugar imbalances affect energy, weight, and long-term health</p>
+          <p><strong>Solution:</strong> Traditional herbs that support healthy glucose metabolism</p>
+          <p><strong>Products:</strong> DiabeTea, Metabolic Capsules</p>
+        </div>
+        
+        <div class="card">
+          <h4>✨ Skin & Glow Concept</h4>
+          <p><strong>Problem:</strong> Dull skin, aging signs, and lack of natural radiance</p>
+          <p><strong>Solution:</strong> Beauty-from-within herbs that nourish skin at the cellular level</p>
+          <p><strong>Products:</strong> RadiantTea, Glow Oil</p>
+        </div>
+        
+        <div class="card">
+          <h4>❤️ Heart Wellness Concept</h4>
+          <p><strong>Problem:</strong> Cardiovascular health requires consistent daily support</p>
+          <p><strong>Solution:</strong> Heart-healthy herbs used for centuries in traditional medicine</p>
+          <p><strong>Products:</strong> HeartTea, Cardio Capsules</p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="website" class="section">
+      <h2>Website Structure</h2>
+      
+      <h3>Pages</h3>
+      <ol>
+        <li><strong>Home</strong> - Conversion-focused landing page with hero, bestsellers, concept tiles, bundles, testimonials, and trust badges</li>
+        <li><strong>Shop</strong> - All products with category/concept filters and sorting options</li>
+        <li><strong>Product Detail</strong> - Full product information with ingredients, usage instructions, and reviews</li>
+        <li><strong>Bundles</strong> - Concept packs with savings displayed</li>
+        <li><strong>Concepts</strong> - Shop by wellness concern with concept tiles</li>
+        <li><strong>Concept Detail</strong> - Individual concept pages with problem/solution and recommended products</li>
+        <li><strong>About</strong> - Brand story, mission, values, and quality commitments</li>
+      </ol>
+    </section>
+    
+    <section id="ecommerce" class="section">
+      <h2>E-Commerce Features</h2>
+      
+      <h3>Cart System</h3>
+      <ul>
+        <li>Slide-out cart drawer</li>
+        <li>Quantity adjustment</li>
+        <li>Subscription toggle per item</li>
+        <li>Remove items</li>
+        <li>Subtotal calculation</li>
+        <li>Checkout button</li>
+      </ul>
+      
+      <h3>Pricing & Subscriptions</h3>
+      <ul>
+        <li>One-time purchase pricing</li>
+        <li>Subscribe & save 15%</li>
+        <li>Monthly subscription option</li>
+        <li>Subscription toggle on product cards</li>
+      </ul>
+      
+      <h3>Regional Support</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Currency</th>
+            <th>Price Multiplier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>UAE</td><td>AED</td><td>1.0</td></tr>
+          <tr><td>India</td><td>₹</td><td>22.5</td></tr>
+          <tr><td>UK</td><td>£</td><td>0.21</td></tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <section id="design" class="section">
+      <h2>Design System</h2>
+      
+      <h3>Colors</h3>
+      <div class="highlight">
+        <p><strong>Primary:</strong> Olive (HSL: 65 60% 25%)</p>
+        <p><strong>Secondary:</strong> Sage (HSL: 75 20% 85%)</p>
+        <p><strong>Accent:</strong> Terracotta (HSL: 20 60% 55%)</p>
+        <p><strong>Background:</strong> Cream (HSL: 45 30% 96%)</p>
+        <p><strong>Foreground:</strong> Dark olive (HSL: 65 30% 15%)</p>
+      </div>
+      
+      <h3>Typography</h3>
+      <ul>
+        <li><strong>Display Font:</strong> Playfair Display (serif)</li>
+        <li><strong>Body Font:</strong> Lato (sans-serif)</li>
+      </ul>
+      
+      <h3>Design Principles</h3>
+      <ul>
+        <li>Premium, clean, modern aesthetic</li>
+        <li>Mobile-first responsive design</li>
+        <li>Strong CTAs</li>
+        <li>Minimal clutter</li>
+        <li>Fast checkout experience</li>
+        <li>Trust-building elements</li>
+      </ul>
+    </section>
+    
+    <section id="compliance" class="section">
+      <h2>Compliance & Language Guidelines</h2>
+      
+      <h3 class="approved">✓ Approved Language</h3>
+      <ul>
+        <li>"Supports..."</li>
+        <li>"Helps maintain..."</li>
+        <li>"Designed for daily use..."</li>
+        <li>"Traditional herbs used for..."</li>
+        <li>"As part of a balanced lifestyle..."</li>
+      </ul>
+      
+      <h3 class="prohibited">✗ Prohibited Language</h3>
+      <ul>
+        <li>"Cures..."</li>
+        <li>"Treats..."</li>
+        <li>"Diagnoses..."</li>
+        <li>"Guaranteed results..."</li>
+        <li>"Medical-grade..."</li>
+      </ul>
+    </section>
+    
+    <section id="metrics" class="section">
+      <h2>Success Metrics (Design Targets)</h2>
+      <ol>
+        <li>Add-to-cart rate</li>
+        <li>Checkout conversion</li>
+        <li>Bundle attachment rate</li>
+        <li>Subscription adoption</li>
+        <li>Repeat purchase rate</li>
+      </ol>
+    </section>
+    
+    <section id="tech" class="section">
+      <h2>Technical Stack</h2>
+      <ul>
+        <li><strong>Framework:</strong> React + Vite</li>
+        <li><strong>Styling:</strong> Tailwind CSS</li>
+        <li><strong>UI Components:</strong> shadcn/ui</li>
+        <li><strong>Icons:</strong> Lucide React</li>
+        <li><strong>Routing:</strong> React Router</li>
+        <li><strong>State Management:</strong> React Context API</li>
+        <li><strong>Notifications:</strong> Sonner (toast)</li>
+      </ul>
+    </section>
+    
+    <section id="future" class="section">
+      <h2>Future Enhancements</h2>
+      <ol>
+        <li><strong>Find Your Concept Quiz</strong> - Personalized product recommendations</li>
+        <li><strong>User Authentication</strong> - Account creation and login</li>
+        <li><strong>Payment Integration</strong> - Stripe checkout</li>
+        <li><strong>Order Management</strong> - Order history and tracking</li>
+        <li><strong>Subscription Management</strong> - Pause, skip, cancel subscriptions</li>
+        <li><strong>Email/WhatsApp Notifications</strong> - Order confirmations</li>
+        <li><strong>Corporate Wellness Portal</strong> - Bulk ordering for businesses</li>
+        <li><strong>Gift Cards</strong> - Digital gift card purchases</li>
+      </ol>
+    </section>
+  </div>
+  
+  <footer class="footer">
+    <p>Earthy Concepts E-Commerce Website Documentation</p>
+    <p>Last updated: January 2026</p>
+  </footer>
+</body>
+</html>
