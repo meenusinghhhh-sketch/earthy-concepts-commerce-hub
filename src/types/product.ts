@@ -28,7 +28,22 @@ export interface Ingredient {
   benefit: string;
 }
 
-export type ProductCategory = 'teas' | 'topicals' | 'supplements' | 'bundles' | 'gifts';
+export type ProductCategory = 
+  | 'teas' 
+  | 'face-masks' 
+  | 'face-mists' 
+  | 'hair-oils' 
+  | 'body-oils' 
+  | 'facial-oils'
+  | 'formulations' 
+  | 'single-herbs' 
+  | 'capsules'
+  | 'powders'
+  | 'ghriti'
+  | 'topicals' 
+  | 'supplements' 
+  | 'bundles' 
+  | 'gifts';
 
 export type ConceptType = 
   | 'calm'
@@ -36,7 +51,14 @@ export type ConceptType =
   | 'immunity'
   | 'metabolic-balance'
   | 'skin-glow'
-  | 'heart-wellness';
+  | 'heart-wellness'
+  | 'brain-mind'
+  | 'hair-scalp'
+  | 'digestive'
+  | 'liver'
+  | 'joints-bones'
+  | 'mens-vitality'
+  | 'general-health';
 
 export interface Concept {
   id: ConceptType;
