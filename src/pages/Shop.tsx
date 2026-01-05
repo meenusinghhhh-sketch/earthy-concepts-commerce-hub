@@ -16,8 +16,16 @@ import {
 const categories: { value: ProductCategory | 'all'; label: string }[] = [
   { value: 'all', label: 'All Products' },
   { value: 'teas', label: 'Teas' },
-  { value: 'topicals', label: 'Topicals' },
-  { value: 'supplements', label: 'Supplements' },
+  { value: 'face-masks', label: 'Face Masks' },
+  { value: 'face-mists', label: 'Face Mists' },
+  { value: 'hair-oils', label: 'Hair Oils' },
+  { value: 'body-oils', label: 'Body Oils' },
+  { value: 'facial-oils', label: 'Facial Oils' },
+  { value: 'formulations', label: 'Formulations' },
+  { value: 'single-herbs', label: 'Single Herbs' },
+  { value: 'capsules', label: 'Capsules' },
+  { value: 'powders', label: 'Powders' },
+  { value: 'ghriti', label: 'Ghriti' },
   { value: 'bundles', label: 'Bundles' },
   { value: 'gifts', label: 'Gifts' },
 ];
