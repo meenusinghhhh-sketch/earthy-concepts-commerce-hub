@@ -23,7 +23,7 @@ const categories: { value: ProductCategory | 'all'; label: string }[] = [
   { value: 'facial-oils', label: 'Facial Oils' },
   { value: 'formulations', label: 'Formulations' },
   { value: 'single-herbs', label: 'Single Herbs' },
-  { value: 'capsules', label: 'Capsules' },
+  
   { value: 'powders', label: 'Powders' },
   { value: 'ghriti', label: 'Ghriti' },
   { value: 'bundles', label: 'Bundles' },
