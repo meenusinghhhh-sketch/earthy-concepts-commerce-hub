@@ -37,7 +37,6 @@ export type ProductCategory =
   | 'facial-oils'
   | 'formulations' 
   | 'single-herbs' 
-  | 'capsules'
   | 'powders'
   | 'ghriti'
   | 'topicals' 
