@@ -15,6 +15,7 @@ import ConceptDetail from "./pages/ConceptDetail";
 import About from "./pages/About";
 import Quiz from "./pages/Quiz";
 import Learn from "./pages/Learn";
+import Subscriptions from "./pages/Subscriptions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/concepts/:id" element={<ConceptDetail />} />
               <Route path="/quiz" element={<Quiz />} />
               <Route path="/learn" element={<Learn />} />
+              <Route path="/subscriptions" element={<Subscriptions />} />
               <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
