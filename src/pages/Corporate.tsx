@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const benefits = [
   {
@@ -74,6 +75,7 @@ const pricingTiers = [
 
 const Corporate = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     companyName: "",
     contactName: "",
@@ -83,20 +85,40 @@ const Corporate = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Inquiry Submitted",
-      description: "Our corporate team will contact you within 24-48 business hours."
-    });
-    setFormData({
-      companyName: "",
-      contactName: "",
-      email: "",
-      phone: "",
-      quantity: "",
-      message: ""
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-corporate-inquiry', {
+        body: formData
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Inquiry Submitted",
+        description: "Our corporate team will contact you within 24-48 business hours. Check your email for confirmation."
+      });
+      
+      setFormData({
+        companyName: "",
+        contactName: "",
+        email: "",
+        phone: "",
+        quantity: "",
+        message: ""
+      });
+    } catch (error: any) {
+      console.error("Error submitting inquiry:", error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your inquiry. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -388,8 +410,8 @@ const Corporate = () => {
                       rows={4}
                     />
                   </div>
-                  <Button type="submit" size="lg" className="w-full">
-                    Submit Inquiry
+                  <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                   </Button>
                 </form>
               </CardContent>
