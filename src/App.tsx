@@ -17,6 +17,7 @@ import Quiz from "./pages/Quiz";
 import Learn from "./pages/Learn";
 import Subscriptions from "./pages/Subscriptions";
 import Gifts from "./pages/Gifts";
+import Corporate from "./pages/Corporate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
               <Route path="/learn" element={<Learn />} />
               <Route path="/subscriptions" element={<Subscriptions />} />
               <Route path="/gifts" element={<Gifts />} />
+              <Route path="/corporate" element={<Corporate />} />
               <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
