@@ -13,6 +13,8 @@ import Bundles from "./pages/Bundles";
 import Concepts from "./pages/Concepts";
 import ConceptDetail from "./pages/ConceptDetail";
 import About from "./pages/About";
+import Quiz from "./pages/Quiz";
+import Learn from "./pages/Learn";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +34,8 @@ const App = () => (
               <Route path="/bundles" element={<Bundles />} />
               <Route path="/concepts" element={<Concepts />} />
               <Route path="/concepts/:id" element={<ConceptDetail />} />
+              <Route path="/quiz" element={<Quiz />} />
+              <Route path="/learn" element={<Learn />} />
               <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
