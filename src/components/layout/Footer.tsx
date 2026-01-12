@@ -72,7 +72,7 @@ export default function Footer() {
               className="h-12 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-primary-foreground/70 text-sm mb-6">
-              Modern Ayurveda for daily balance. Born in Dubai, rooted in ancient wisdom.
+              Holistic wellness for daily balance. Born in Dubai, rooted in ancient wisdom.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
