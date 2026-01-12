@@ -14,7 +14,7 @@ export default function HeroSection() {
       <div className="container-wide relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-sm uppercase tracking-widest text-primary mb-4 animate-fade-up">
-            Modern Ayurveda • Born in Dubai
+            Holistic Wellness • Born in Dubai
           </p>
           
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-tight animate-fade-up" style={{ animationDelay: '0.1s' }}>
